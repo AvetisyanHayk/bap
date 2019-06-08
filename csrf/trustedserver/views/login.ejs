@@ -1,0 +1,32 @@
+<% locals.pageTitle = 'Login' %>
+<%- include ./_fragments/head %>
+<div class="container">
+
+    <main>
+        <form method="post" id="form-login" autocomplete="off">
+            <fieldset>
+                <legend>Login</legend>
+
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="username">Gebruikersnaam</label>
+                        <select id="username" name="username" class="form-control" required>
+                            <option value="">-</option>
+                            <% usernames.forEach(username => { %>
+                            <option value="<%= username %>"><%= username %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="password">Wachtwoord</label>
+                        <input type="password" id="password" class="form-control" name="password" value="" required readonly/>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Aanmelden</button>
+        </form>
+    </main>
+</div>
+<%- include ./_fragments/tail %>
