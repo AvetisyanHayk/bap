@@ -2,6 +2,8 @@ const express = require("express");
 const http = require("http");
 const path = require("path");
 const usersRepo = require("./repositories/UserRepository");
+const authMiddleware = require('./middlewares/AuthMiddleware');
+const csrfMiddleware = require('./middlewares/CSRFMiddleware');
 
 let HTTP_PORT = process.argv[2] || 8081;
 
@@ -20,8 +22,10 @@ app.set('view engine', 'ejs');
 
 sessions.init(app);
 
-app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.all('*', authMiddleware);
+app.post('*', csrfMiddleware);
+app.use('/', indexRouter);
 
 usersRepo.init();
 

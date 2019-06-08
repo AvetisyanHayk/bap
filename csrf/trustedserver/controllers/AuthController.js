@@ -1,4 +1,5 @@
 const userRepo = require('../repositories/UserRepository');
+const CSRFTokenFactory = require('../core/CSRFTokenFactory');
 
 function login(request, response) {
     renderLogin(response)
@@ -13,6 +14,7 @@ function performLogin(request, response) {
         userRepo.find(username)
             .then(user => {
                 request.session.user = JSON.stringify(user);
+                request.session.csrfToken = CSRFTokenFactory.create(request.sessionID);
                 response.redirect('/');
             })
             .catch(err => {

@@ -22,6 +22,7 @@
         <div class="modal fade" id="modal-edit-user" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <form id="form-edit-user" method="post" class="modal-content" autocomplete="off">
+                    <input type="hidden" name="csrfToken" value="<%= csrfToken %>">
                     <input type="hidden" name="username" value=<%= user.name %>>
                     <div class="modal-header bg-primary text-light">
                         <h5 class="modal-title">Account wijzigen</h5>

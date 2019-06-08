@@ -3,6 +3,7 @@ const userRepo = require('../repositories/UserRepository');
 function index(request, response) {
     let data = {
         user: JSON.parse(request.session.user),
+        csrfToken: request.session.csrfToken,
     }
     let success = request.session.success;
     if (!(!success)) {
