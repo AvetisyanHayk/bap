@@ -18,6 +18,8 @@
 
 > > > [1.1.1 Scenario 1 - CSRF Exploit](#111-scenario-1---csrf-exploit)
 
+> > > [1.1.2 Scenario 1 - CSRF Token](#112-scenario-1---csrf-token)
+
 ------
 
 # 1 Branches
@@ -56,3 +58,12 @@ $ cd csrf/docker
 
 - **Linux**: `path/to/docker $ ./down.sh`
 - **Windows**: `path/to/docker> down.bat`
+
+### 1.1.2 Scenario 1 - CSRF Token
+```bash
+$ git checkout csrf-1/csrf-token-example
+$ cd csrf/docker
+```
+
+Daarna dezelfde stappen herhalen zoals bij [1.1.2 Scenario 1 - CSRF Token](#112-scenario-1---csrf-token).
+De CSRF-aanval mislukt omdat een CSRF-token aanwezig is.
