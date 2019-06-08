@@ -51,7 +51,7 @@ $ cd csrf/docker
 3. (Optioneel) Klik op de knop `Wijzigen` en wijzig het e-mailadres
 4. Surf naar [http://localhost:8082](http://localhost:8082)
 5. Volg de instructies voor een CSRF-aanval
-6. Ververs de webapplicatie op de _Trusted Server_: het e-mailadres moet `bap.forged@example.com` worden. **De CSRF-aanval is gelukt!**
+6. Ververs de webapplicatie op de _Trusted Server_: het e-mailadres moet `forged@bybadguy.example.com` worden. **De CSRF-aanval is gelukt!**
 
 #### Stap 3: Docker-containers stoppen
 
