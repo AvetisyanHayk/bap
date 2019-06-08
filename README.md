@@ -17,7 +17,7 @@
 >
 > > [1.1 Branch CSRF](#11-branch-csrf)
 
-> > > [1.1.1 Scenario 1 - CSRF Exploit](#111-scenario-1-csrf-exploit)
+> > > [1.1.1 Scenario 1 - CSRF Exploit](#111-scenario-1---csrf-exploit)
 
 ------
 
