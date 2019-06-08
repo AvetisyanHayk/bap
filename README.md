@@ -1,4 +1,3 @@
-### Required
 ![Custom badge](https://img.shields.io/badge/Required-Docker-blue.svg) ![Custom badge](https://img.shields.io/badge/Required-npm%20v6.9.0-cc0000.svg)
 
 ---
