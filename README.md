@@ -84,5 +84,5 @@ $ node app
 
 1. Surf naar [http://localhost:8083](http://localhost:8083), klik op `localStorage weergeven`: het zal leeg zijn.
 2. Meldt u aan. U wordt omgeleid naar de homepagina.
-3. Klik vervolgens opnieuw op `localStorage weergeven`: een toegangstoken (JWT) wordt weergegeven, uitgegeven door het Token Endpoint.
+3. Klik vervolgens opnieuw op `localStorage weergeven`: een toegangstoken (JWT) wordt weergegeven, uitgegeven door het Token Endpoint (**Resource Owner Password Credentials Grant Type**).
 4. Wijzig het e-mailadres. Het zal succesvol gewijzigd worden.
