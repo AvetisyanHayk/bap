@@ -1,0 +1,24 @@
+<main>
+    <form method="post" id="form-login" action="/auth/login" autocomplete="off">
+        <fieldset>
+            <legend>Login</legend>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="username">Gebruikersnaam</label>
+                    <select id="username" name="username" class="form-control" required>
+                        <option value="">-</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" id="password" class="form-control" name="password" value="" required
+                        readonly />
+                </div>
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary button-edit" disabled><i data-enabled="fa-sign-in-alt" class="fa fa-fw fa-spinner fa-pulse"></i> Aanmelden</button>
+    </form>
+</main>
