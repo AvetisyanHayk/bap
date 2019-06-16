@@ -52,7 +52,20 @@ function init() {
         email: "hayk@example.com"
     };
     let username = "hayk";
+    createStoragePath();
     fs.writeFileSync(filename(username), JSON.stringify(user));
+}
+
+function createStoragePath() {
+    createPathIfExists(Kernel.usersDir)
+}
+
+function createPathIfExists(path) {
+    try {
+        fs.mkdirSync(path, { recursive: true })
+    } catch (ex) {
+        console.error(ex)
+    }
 }
 
 module.exports = {
