@@ -195,8 +195,6 @@ $(document).ready(function () {
 
     var FetchUtils = (function () {
 
-
-
         function getJsonFetchHeaders(bearerToken) {
             var headers = {
                 'Content-Type': 'application/json',
@@ -219,13 +217,14 @@ $(document).ready(function () {
 
 
         function addBearerTokenHeader(token, headers) {
+            var bearerToken = "Bearer " + token;
             var bearerHeader = {
-                'Bearer': token
+                'Authorization': bearerToken
             }
             if (!headers) {
                 return bearerHeader
             }
-            headers['Bearer'] = token;
+            headers['Authorization'] = bearerToken;
             return headers;
         }
 
@@ -237,6 +236,20 @@ $(document).ready(function () {
                 headers,
                 body: JSON.stringify(payload)
             }
+        }
+
+        function getResourceFetchOptions(method, payload) {
+            var token = Storage.getAccessTokenAndUsername().token.access_token;
+            var headers = getUrlEncodedFetchHeaders(token);
+            var options = {
+                method,
+                headers
+            };
+            if (!payload) {
+                return options
+            }
+            options.body = JSON.stringify(payload);
+            return options;
         }
 
         function getFormOptions($form, payload) {
@@ -273,6 +286,7 @@ $(document).ready(function () {
             getJsonFetchOptions,
             getFormOptions,
             getFormUrl,
+            getResourceFetchOptions,
         }
 
     })();
@@ -344,9 +358,11 @@ $(document).ready(function () {
                     .catch(console.error)
             },
             user: function (resolve, reject) {
-                var username = General.getUsername();
-                var url = URL_API.users.one(username);
-                fetch(url)
+                var accessTokenAndUsername = Storage.getAccessTokenAndUsername();
+                var options = FetchUtils.getResourceFetchOptions("GET");
+                var url = URL_API.users.one(accessTokenAndUsername.username);
+                console.log(options, url);
+                fetch(url, options)
                     .then(FetchHandler.parseJson)
                     .then(resolve)
                     .catch(reject);

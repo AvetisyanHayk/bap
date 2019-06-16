@@ -12,8 +12,14 @@ const jwtConfiguration = {
     expiresInMinutes: 15,
 }
 
+const jwtScopes = {
+    READ: "read",
+    WRITE: "write",
+}
+
 module.exports = {
     usersDir,
     templatesDir,
     jwtConfiguration,
+    jwtScopes,
 }
