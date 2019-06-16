@@ -16,8 +16,8 @@ function performLogin(request, response) {
                 response.json(token);
             })
             .catch(err => {
-                console.error(err)
-                response.json({ err: ['username'] })
+                console.error(err);
+                response.json({ err: ['username'] });
             })
     }
 }
